@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    margin: 0;
+    background: url('assets/img/bricks-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    cursor: url('assets/img/scope.png') 16 16, auto;
+    overflow: hidden;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  
+  #hud, #gameOver {
+    color: black;
+  }
+
+  #topContainer {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px 0;
+  }
+
+  #centerContainer {
+    margin: 30px auto;
+    width: 95%;
+    max-width: 1200px;
+    height: calc(100vh - 130px);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-sizing: border-box;
+  }
+
+  #hud {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-size: 18px;
+    gap: 15px;
+  }
+  
+  #highScore, #timer, #killCount {
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 18px;
+    border: 2px solid black; 
+    background-color: white; 
+    color: black; 
+  }
+  
+  #highScore {
+    position: absolute;
+    left: 10px;
+  }
+
+  #muteBtn {
+    position: absolute;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #muteBtn img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  
+  #timer, #killCount {
+    margin: 0 15px;
+    text-align: center;
+  }
+  
+  #hud span {
+    margin-right: 15px;
+  }
+  
+  #gameArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('assets/img/game-background.jpg') no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  
+  .cockroach {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transition: transform 0.2s;
+    cursor: url('assets/img/scope.png') 16 16, auto;
+  }
+  
+  .cockroach.dead {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  #startBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #gameOver {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  #gameOver button {
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  #hud, #gameOver, #highScore, #timer, #killCount, #muteBtn, #startBtn, #gameOver button {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  #gameOver h1 {
+    font-size: 18px;
+  }
+
+  #gameTitle {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    margin: -5px 0;
+    padding: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    #topContainer {
+      padding: 10px 2%;
+    }
+  
+    #centerContainer {
+      margin: 20px auto;
+      width: 90%;
+      height: calc(100vh - 150px);
+    }
+  
+    #hud {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    #highScore, #timer, #killCount {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  
+    #muteBtn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    #startBtn {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  
+    #gameOver {
+      width: 95%;
+      max-width: 350px;
+      padding: 15px;
+    }
+  
+    #gameOver button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    #gameOver h1 {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #hud {
+      font-size: 12px;
+    }
+  
+    #highScore, #timer, #killCount {
+      font-size: 20px;
+    }
+  
+    #muteBtn, #startBtn, #gameOver button {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  
+    #gameOver {
+      max-width: 300px;
+    }
+  }
